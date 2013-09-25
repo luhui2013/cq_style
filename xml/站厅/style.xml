@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<style id="884908C7-96AC-5E40-345A-9B3CB3C6CC14">
+  
+  <!-- 属性描述 -->
+  <property  width="1920" height="1080" language="zh"/>
+  
+  <screen background="03aa48ea-f871-444a-8be8-9ca10f445ee8.jpg" id="3ca74fc5-e311-44f5-823e-557696052b4b">
+    <!-- 行为描述 -->
+	<action>
+		<!-- 语言切换行为 -->
+		<change_langauge>
+			<property zh="3" en="5"/>
+		</change_langauge>	
+	 </action>
+	 
+	 <!-- 控件描述 -->
+	<children>
+	
+		<!-- 视频控件 -->
+		<video id="C756284E-FC35-4F75-D47D-9B3BC94AA863"  x="20" y="14" width="1370" height="910"  alpha="255">
+		
+		    <!-- 属性 可选 -->
+			<property name="style_video"/>
+		</video>
+
+		<!-- 滚动字幕 -->
+		<scroll_txt id="E9F6657D-825B-94F1-6A06-9B3C3A222989"  x="258" y="940" width="1130" height="63"  alpha="255">
+			<!-- 字体样式 可选 -->
+			<font font_color="0x00FF00" font_family="微软雅黑" font_size="42"/>
+			
+			<!-- 属性 可选 -->
+			<property name="style_txt_op"/>
+			<property scroll_type="RIGHT_TO_LEFT"/>
+		</scroll_txt>
+		
+		<!-- 滚动字幕 -->
+		<scroll_txt id="E9F6657D-825B-94F1-6A06-9B3C3A222989"  x="258" y="1003" width="1130" height="63"  alpha="255">
+			<!-- 字体样式 可选 -->
+			<font font_color="0x00FF00" font_family="微软雅黑" font_size="42"/>
+			
+			<!-- 属性 可选 -->
+			<property name="style_txt_ad"/>
+			<property scroll_type="RIGHT_TO_LEFT"/>
+		</scroll_txt>
+		
+		<!-- ATS控件 -->
+		<ats id="E9F6657D-825B-94F1-6A06-9B3C3A222989" x="1409" y="14" width="490" height="783"  alpha="255">
+			<skin id="884908C7-96AC-5E40-345A-9B3CB3C6CC14"/>
+		</ats>
+
+		<!-- 航班控件 -->
+		<flight id="E9F6657D-825B-94F1-6A06-9B3C3A222989" x="1409" y="720" width="490" height="300"  alpha="255">
+			<!-- 字体 可选 -->
+			<font font_color="0xFFFFFF" font_family="微软雅黑" font_size="18" />
+			<!-- skin先固定为flights.html-->
+		</flight>
+		
+	</children>
+  </screen>
+  
+  <i18n>
+	  <en>
+		<string id="ats_txt1">Direction</string>
+		<string id="ats_txt2">Direction</string>
+		<string id="ats_txt3">To the direction</string>
+		<string id="ats_txt4">First</string>
+		<string id="ats_txt5">Last</string>
+
+	  </en>
+	  <zh>
+		<string id="ats_txt1">开往</string>
+		<string id="ats_txt2">开往</string>
+		<string id="ats_txt3">开往方向</string>
+		<string id="ats_txt4">首班</string>
+		<string id="ats_txt5">末班</string>
+
+	  </zh>
+	  
+   </i18n>
+   
+</style>

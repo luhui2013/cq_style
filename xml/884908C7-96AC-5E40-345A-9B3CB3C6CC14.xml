@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<skin_ats id="884908C7-96AC-5E40-345A-9B3CB3C6CC14" background="">
+   <property name="skin_ats1"/>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="22" width="106"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property text="{ats_txt1}" />
+   </static_txt>
+
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="58" width="106"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property text="{ats_txt2}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="260" width="216"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt3}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="280" y="260" width="76"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt4}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="380" y="260" width="76"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt5}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="390" width="136"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt6}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="645" width="104"  height="25" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="19"/>
+      <property text="{ats_txt7}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="677" width="104"  height="25" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="19"/>
+      <property text="{ats_txt8}" />
+   </static_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="170" y="10" width="332" height="70" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="64"/>
+      <property name="cur_station_name" />
+      <property text="" />
+   </dynamic_txt>
+
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="114" width="216" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="26"/>
+      <property name="date" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="360" y="114" width="98" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="26"/>
+      <property name="week" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="60" y="150" width="436" height="92" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="88"/>
+      <property name="time" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="298" width="216" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property name="to_station" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="280" y="298" width="76" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property name="first_train" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="380" y="298" width="76" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property name="last_train" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="100" y="420" width="436" height="138" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="120"/>
+      <property name="first_train_arrival" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="140" y="648" width="222" height="44" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="38"/>
+      <property name="next_train_to" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="120" y="705" width="222" height="78" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="78"/>
+      <property name="second_train_arrival" />
+      <property text="" />
+   </dynamic_txt>
+
+</skin_ats>

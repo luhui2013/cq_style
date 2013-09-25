@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>空轨信息</title>
+    <style>
+        body, div {
+            margin:0; padding:0; 
+        }
+        td {
+            text-align:center;
+            line-height:20px;
+            font-size:16px;
+			color:#ffffff;
+        }
+    </style>
+    <script>
+        loadXML = function (xmlString) {
+            var xmlDoc = null;
+
+            if (!window.DOMParser && window.ActiveXObject) {
+                var xmlDomVersions = ['MSXML.2.DOMDocument.6.0', 'MSXML.2.DOMDocument.3.0', 'Microsoft.XMLDOM'];
+                for (var i = 0; i < xmlDomVersions.length; i++) {
+                    try {
+                        xmlDoc = new ActiveXObject(xmlDomVersions[i]);
+                        xmlDoc.async = false;
+                        xmlDoc.loadXML(xmlString); //loadXML方法载入xml字符串
+                        break;
+                    } catch (e) {
+                    }
+                }
+            }
+            else if (window.DOMParser && document.implementation && document.implementation.createDocument) {
+                try {
+                    domParser = new DOMParser();
+                    xmlDoc = domParser.parseFromString(xmlString, 'text/xml');
+                } catch (e) {
+                }
+            }
+            else {
+                return null;
+            }
+
+            return xmlDoc;
+        }
+
+        var __debug = false;
+
+        var tableHeader = "<table style=\"width:100%;\">";
+        var tableItem = "<tr><td>{item1}</td><td>{item2}</td><td>{item3}</td><td>{item4}</td></tr>";
+        var tableFoot = "</table>";
+
+        var timer = -1;
+        var timerInterval = 4*1000;
+        var type1_list = [];
+        var type2_list = [];
+
+        var LIST_TYPE1 = "1";
+        var LIST_TYPE2 = "2";
+
+        var curList = null;
+        var pageSize = 6;
+        var pageCount = 0;
+        var pageIndex = 0;
+
+        function loadData(xml) {
+            addType1Node = function (list,element) {
+                var flightNumber = element.getElementsByTagName("航班号")[0].firstChild.nodeValue;
+                var destination = element.getElementsByTagName("目的地")[0].firstChild.nodeValue;
+
+                var departureTime = element.getElementsByTagName("预计起飞时间")[0].firstChild.nodeValue;
+                var dateTime = departureTime.split(" ");
+                if (dateTime.length == 2) departureTime = dateTime[1];
+
+                var flightStatus = "";
+                var nodeList = element.getElementsByTagName("航班状态");
+                if (nodeList.length != 0) {
+                    flightStatus = nodeList[0].firstChild.nodeValue;
+                }
+                
+                
+                list.push({ "flightNumber": flightNumber, "destination": destination, "departureTime": departureTime, "flightStatus": flightStatus });
+            }
+            addType2Node = function (list,element) {
+                var flightNumber = element.getElementsByTagName("航班号")[0].firstChild.nodeValue;
+                var startaddress = element.getElementsByTagName("起始地")[0].firstChild.nodeValue;
+
+                var arrivalTime = element.getElementsByTagName("预计到达时间")[0].firstChild.nodeValue;
+                var dateTime = arrivalTime.split(" ");
+                if (dateTime.length == 2) arrivalTime = dateTime[1];
+                
+                var flightStatus = "";
+                var nodeList = element.getElementsByTagName("航班状态");
+                if (nodeList.length != 0) {
+                    flightStatus = nodeList[0].firstChild.nodeValue;
+                }
+
+                list.push({ "flightNumber": flightNumber, "startaddress": startaddress, "arrivalTime": arrivalTime, "flightStatus": flightStatus });
+            }
+            var xmldoc = loadXML(xml);
+            
+            if (xmldoc) {
+                clearData();
+
+                var elements = xmldoc.getElementsByTagName("Table1");
+
+                for (var i = 0; i < elements.length; i++) {
+                    var node = elements[i];
+                    var type = node.getElementsByTagName("起始地")[0].firstChild.nodeValue;
+                    if (type == "重庆") {
+                        addType1Node(type1_list, node);
+                    } else {
+                        addType2Node(type2_list,node);
+                       
+                    }
+                }
+
+                var type1_list_len = type1_list.length;
+                var type2_list_len = type2_list.length;
+                
+                if (type1_list_len == 0 && type2_list_len == 0) return;
+
+                if (type1_list_len != 0) {
+                    curList = type1_list;
+                } else {
+                    curList = type2_list;
+                }
+
+                pageIndex = 0;
+                pageCount = Math.ceil(curList.length/pageSize);
+                showPage();
+
+                timer = setInterval(showPage, timerInterval);
+            }
+           
+        }
+
+        function clearData() {
+            if (timer != -1) {
+                clearInterval(timer);
+                timer = -1;
+            }
+            type1_list = [];
+            type2_list = [];
+
+        }
+
+        function showPage() {
+            var type = LIST_TYPE1;
+            if (curList == type2_list) {
+                type = LIST_TYPE2;
+            }
+
+            var len = curList.length;
+            var pos = pageIndex * pageSize;
+            var pageData = [];
+
+            for (var i = pos; i < pos + pageSize; i++) {
+                if (i >= len) break;
+
+                pageData.push(curList[i]);
+            }
+
+            buildView(type,pageData);
+
+            if (__debug)
+                showDebug("pageCount:" + pageCount + " pageIndex:" + pageIndex + " type:" + type);
+
+            pageIndex++;
+            
+            if (pageIndex >= pageCount) {
+                if (curList == type1_list) {
+                    if (type2_list.length > 0) {
+                        curList = type2_list;
+                    }
+                } else if (curList == type2_list) {
+                    if (type1_list.length > 0) {
+                        curList = type1_list;
+                    }
+                } else { }
+
+                pageIndex = 0;
+                pageCount = Math.ceil(curList.length / pageSize);
+            }
+        }
+
+
+        function buildView(type,pageData) {
+            var str = tableHeader;
+            if (type == LIST_TYPE1) {
+                str += tableItem.replace("{item1}", "航班号").replace("{item2}", "目的地").replace("{item3}", "预计离港").replace("{item4}", "航班状态");
+            } else {
+                str += tableItem.replace("{item1}", "航班号").replace("{item2}", "出发地").replace("{item3}", "预计到港").replace("{item4}", "航班状态");
+            }
+
+            var len = pageData.length;
+            for (var i = 0; i < len; i++) {
+                var item = pageData[i];
+                if (type == LIST_TYPE1) {
+                    str += tableItem.replace("{item1}", item["flightNumber"]).replace("{item2}", item["destination"]).replace("{item3}", item["departureTime"]).replace("{item4}", item["flightStatus"]);
+                } else {
+                    str += tableItem.replace("{item1}", item["flightNumber"]).replace("{item2}", item["startaddress"]).replace("{item3}", item["arrivalTime"]).replace("{item4}", item["flightStatus"]);
+                }
+            }
+            str += tableFoot;
+
+            var view = document.getElementById("table_view");
+            view.innerHTML = str;
+
+        }
+
+
+        function showDebug(msg) {
+            var div = document.getElementById("div_debug");
+            div.innerText = msg;
+        }
+
+        
+    </script>
+</head>
+<body>
+   
+    <div id="table_view">
+    </div>
+
+
+    <br />
+     <div id="div_debug" style="color:red">
+    </div>
+</body>
+</html>

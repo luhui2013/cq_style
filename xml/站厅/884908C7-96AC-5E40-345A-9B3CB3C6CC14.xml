@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<skin_ats id="884908C7-96AC-5E40-345A-9B3CB3C6CC14" background="">
+   <property name="skin_ats1"/>
+   
+
+     <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="500" width="106"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property text="{ats_txt1}" />
+   </static_txt>
+   
+      <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="550" width="106"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property text="{ats_txt2}" />
+   </static_txt>
+
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="410" width="216"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt3}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="280" y="410" width="76"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt4}" />
+   </static_txt>
+   
+   <static_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="380" y="410" width="76"  height="34" alpha="255">
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="28"/>
+      <property text="{ats_txt5}" />
+   </static_txt>
+   
+
+
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="80" y="40" width="332" height="70" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="64"/>
+      <property name="cur_station_name" />
+      <property text="" />
+   </dynamic_txt>
+
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="20" y="200" width="216" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="26"/>
+      <property name="date" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="360" y="200" width="98" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="26"/>
+      <property name="week" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="60" y="240" width="436" height="92" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="88"/>
+      <property name="time" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="80" y="500" width="216" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property name="to_station1" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="280" y="500" width="76" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property name="first_train1" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="380" y="500" width="76" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property name="last_train1" />
+      <property text="" />
+   </dynamic_txt>
+   
+   
+      <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="80" y="550" width="216" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property name="to_station2" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="280" y="550" width="76" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property name="first_train2" />
+      <property text="" />
+   </dynamic_txt>
+   
+   <dynamic_txt id="C756284E-FC35-4F75-D47D-9B3BC94AA861" x="380" y="550" width="76" height="34" alpha="255"> 
+      <font font_color="0xFFFFFF" font_family="微软雅黑" font_size="22"/>
+      <property name="last_train2" />
+      <property text="" />
+   </dynamic_txt>
+
+
+
+
+</skin_ats>
