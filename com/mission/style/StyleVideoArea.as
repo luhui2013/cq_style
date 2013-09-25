@@ -12,7 +12,6 @@ package com.mission.style
 		
 		public function StyleVideoArea() 
 		{
-			
 		}
 		
 		override public function parseXML(xml:XML):void {
